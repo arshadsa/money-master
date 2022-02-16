@@ -5,8 +5,95 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <!-- -------Font awesome---------- -->
+  <script src="https://kit.fontawesome.com/71098093a0.js" crossorigin="anonymous"></script>
+  <!-- -------Bootstrap CSS stylesheet ---------- -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  
+  <!-- ---------Vanilla CSS---------------------  -->
+  <link rel="stylesheet" href="css/styles.css" />
+
 </head>
-<body>
-  <h1>Hello World</h1>
+<body class="w-75 mx-auto">
+  <header>
+    <h1 class="text-center">Money Management <i class="fa-solid fa-money-bill-1-wave"></i></h1>    
+  </header>
+   <!-- ---------------------------------Main code starts here------------------------------  -->
+  <section class="container mt-5 mb-5">
+    <article class="row">
+      <div class="col-xl-6 col-12">
+        <img src="images/money-management.jpg" class="img-fluid" alt="" />
+      </div>
+      <!-- ----------Customization Section -------------- -->
+      <div class="col-xl-6 col-12 ">
+        <!-- mx-3 bg-light -->
+        <!------------------- heading------------ -->
+        <!-- Income -->
+      <h3 class="text-center p-3 fw-bold">Income</h2>
+      <div class="d-flex">
+        <div class="col-3">
+          <p class="text-end pe-2">Income:</p>
+        </div>
+        <div class="col-9">
+          <input class="bg-dark bg-opacity-10 border-0 w-75" type="number" id="income" name="income">
+        </div>
+      </div>
+      <!-- Expenses -->
+      <h3 class="text-center p-2 fw-bold">Expenses</h2>
+      <div class="d-flex">
+        <div class="col-3">
+          <p class="text-end pe-2">Food:</p>
+        </div>
+        <div class="col-9">
+          <input type="number" class="bg-dark bg-opacity-10 border-0 w-75" id="food" name="food">
+        </div>
+      </div>
+      <div class="d-flex">
+        <div class="col-3">
+          <p class="text-end pe-2">Rent:</p>
+        </div>
+        <div class="col-9">
+          <input type="number" class="bg-dark bg-opacity-10 border-0 w-75" id="rent" name="rent">
+        </div>        
+      </div>
+      <div class="d-flex">
+        <div class="col-3">
+          <p class="text-end pe-2">Cloths:</p>
+        </div>
+        <div class="col-9">
+          <input type="number" class="bg-dark bg-opacity-10 border-0 w-75" id="cloths" name="cloths">
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <p role="button" class="btn btn-primary m-3 px-5 fw-bold" id="calculate">Calculate</p>
+      </div>
+      <h4 class="text-center fw-bold">Total Expenses: <span id="total-expense"> 5500</span></h3>
+      <h4 class="text-center fw-bold">Balance: <span id="balance"> 4500</span></h3>
+      <div class="d-flex py-3 pe-2 justify-content-center">
+        <div class="col-3">
+            <p class="text-end pe-2">Save:</p>
+          </div>
+          <div class="col-3">
+            <input class="bg-dark bg-opacity-10 border-0 w-100" type="number" id="percent-save" name="percent-save">
+          </div>
+          <div class="col-1">
+            <p class="text-center">%</p>
+          </div>
+          <div class="col-5">
+            <p role="button" class="px-2 btn btn-primary fw-bold w-100" id="save">Save</p>
+          </div>
+
+      </div>
+      <div>
+        <h4 class="text-center fw-bold">Saving Amount: <span id="saving-amount">2000</span></h3>
+        <h4 class="text-center fw-bold">Remaining Balance: <span id="remaining-balance">2000</span></h3>
+      </div>
+    </article>
+  </section>
+    <!-- -----------Bootstrap Javascript  -------------------->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- -----------vanilla Javascript ------------------------ -->
+    <script src="js/script.js"></script>
 </body>
 </html>
