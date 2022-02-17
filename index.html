@@ -71,8 +71,12 @@
       <div class="d-flex justify-content-center">
         <p role="button" class="btn btn-primary m-3 px-5 fw-bold" id="calculate">Calculate</p>
       </div>
-      <h4 class="text-center fw-bold">Total Expenses: <span id="total-expense"> 5500</span></h3>
-      <h4 class="text-center fw-bold">Balance: <span id="balance"> 4500</span></h3>
+      <div class="notify-section">
+        <p id="over-expense" class="notify text-center d-none">❌ Income is less than expenses! Please readjust income or expenses.</p>
+        <p id="negative-input" class="notify text-center d-none">❌ Negative number is given in one of the inputs.</p>
+    </div>
+      <h4 class="text-center fw-bold">Total Expenses: <span id="total-expense"></span></h3>
+      <h4 class="text-center fw-bold">Balance: <span id="balance"></span></h3>
       <div class="d-flex py-3 pe-2 justify-content-center">
         <div class="col-3">
             <p class="text-end pe-2">Save:</p>
@@ -86,11 +90,12 @@
           <div class="col-5">
             <p role="button" class="px-2 btn btn-primary fw-bold w-100" id="save">Save</p>
           </div>
-
       </div>
+      <div class="notify-section">
+        <p id="error-save" class="notify text-center d-none">❌ Error. Please check the fields again!</p>
       <div>
-        <h4 class="text-center fw-bold">Saving Amount: <span id="saving-amount">2000</span></h3>
-        <h4 class="text-center fw-bold">Remaining Balance: <span id="remaining-balance">2000</span></h3>
+        <h4 class="text-center fw-bold">Saving Amount: <span id="saving-amount"></span></h3>
+        <h4 class="text-center fw-bold">Remaining Balance: <span id="remaining-balance"></span></h3>
       </div>
     </article>
   </section>
