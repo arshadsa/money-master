@@ -20,6 +20,7 @@ function clearWarnings(){
   document.getElementById('over-expense').classList.add('d-none');
   document.getElementById('negative-input').classList.add('d-none');
   document.getElementById('error-save').classList.add('d-none');
+  document.getElementById('negative-input-income').classList.add('d-none');
 }
 
 // Expense and Balance calculation.
@@ -44,7 +45,6 @@ function getValue(id, type){
   } else {
     return parseFloat(document.getElementById(id).value); 
   }
-
 }
 
 // Set value in any DOM.
@@ -95,6 +95,9 @@ document.getElementById('calculate').addEventListener('click', function () {
   {
     // Some of the items have negative input. Check failed at the if statement.
     document.getElementById('negative-input').classList.remove('d-none');
+    if(income<0){
+      document.getElementById('negative-input-income').classList.remove('d-none');
+    }
     clearExpensesBalanceSavings();
   }  
 });
@@ -102,7 +105,7 @@ document.getElementById('calculate').addEventListener('click', function () {
 // Event listenner for save button.
 document.getElementById('save').addEventListener('click', function () {
   // Clear savings error first.
-  document.getElementById('error-save').classList.add('d-none');
+document.getElementById('error-save').classList.add('d-none');
 const percentSave = getValue('percent-save');
 const balance = getValue('balance', 'text');
 const income = getValue('income');
