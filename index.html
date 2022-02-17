@@ -16,23 +16,27 @@
   
   <!-- ---------Vanilla CSS---------------------  -->
   <link rel="stylesheet" href="css/styles.css" />
-
 </head>
+
+<!-------------------- Body -------------------->
 <body class="w-75 mx-auto">
   <header>
     <h1 class="text-center">Money Management <i class="fa-solid fa-money-bill-1-wave"></i></h1>    
   </header>
+
    <!-- ---------------------------------Main code starts here------------------------------  -->
   <section class="container mt-5 mb-5">
     <article class="row">
       <div class="col-xl-6 col-12">
         <img src="images/money-management.jpg" class="img-fluid" alt="" />
       </div>
-      <!-- ----------Customization Section -------------- -->
+
+      <!------------ Calculation Section ---------------->
       <div class="col-xl-6 col-12 ">
-        <!-- mx-3 bg-light -->
+        
         <!------------------- heading------------ -->
-        <!-- Income -->
+        <!-------------------- Income -------------------->
+
       <h3 class="text-center p-3 fw-bold">Income</h2>
       <div class="d-flex">
         <div class="col-3">
@@ -42,7 +46,9 @@
           <input class="bg-dark bg-opacity-10 border-0 w-75" type="number" id="income" name="income">
         </div>
       </div>
-      <!-- Expenses -->
+
+      <!-------------------- Expenses -------------------->
+
       <h3 class="text-center p-2 fw-bold">Expenses</h2>
       <div class="d-flex">
         <div class="col-3">
@@ -68,37 +74,56 @@
           <input type="number" class="bg-dark bg-opacity-10 border-0 w-75" id="cloths" name="cloths">
         </div>
       </div>
+
+      <!-------------------- Calculate Button -------------------->
+
       <div class="d-flex justify-content-center">
         <p role="button" class="btn btn-primary m-3 px-5 fw-bold" id="calculate">Calculate</p>
       </div>
+
+      <!-------------------- Hidden Error Sections -------------------->
+
       <div class="notify-section">
         <p id="over-expense" class="notify text-center d-none">❌ Income is less than expenses! Please readjust income or expenses.</p>
         <p id="negative-input" class="notify text-center d-none">❌ Negative number is given in one of the inputs.</p>
     </div>
+
+      <!-------------------- Results -------------------->
+
       <h4 class="text-center fw-bold">Total Expenses: <span id="total-expense"></span></h3>
       <h4 class="text-center fw-bold">Balance: <span id="balance"></span></h3>
+
+        <!-------------------- Savings Calculation -------------------->
+
       <div class="d-flex py-3 pe-2 justify-content-center">
         <div class="col-3">
-            <p class="text-end pe-2">Save:</p>
-          </div>
-          <div class="col-3">
-            <input class="bg-dark bg-opacity-10 border-0 w-100" type="number" id="percent-save" name="percent-save">
-          </div>
-          <div class="col-1">
-            <p class="text-center">%</p>
-          </div>
-          <div class="col-5">
-            <p role="button" class="px-2 btn btn-primary fw-bold w-100" id="save">Save</p>
-          </div>
+          <p class="text-end pe-2">Save:</p>
+        </div>
+        <div class="col-3">
+          <input class="bg-dark bg-opacity-10 border-0 w-100" type="number" id="percent-save" name="percent-save">
+        </div>
+        <div class="col-1">
+          <p class="text-center">%</p>
+        </div>
+
+        <!-------------------- Save Button -------------------->
+
+        <div class="col-5">
+          <p role="button" class="px-2 btn btn-primary fw-bold w-100" id="save">Save</p>
+        </div>
       </div>
       <div class="notify-section">
         <p id="error-save" class="notify text-center d-none">❌ Error. Please check the fields again!</p>
+
+        <!-------------------- Savings amount and Balance Shown -------------------->
+
       <div>
         <h4 class="text-center fw-bold">Saving Amount: <span id="saving-amount"></span></h3>
         <h4 class="text-center fw-bold">Remaining Balance: <span id="remaining-balance"></span></h3>
       </div>
     </article>
   </section>
+  
     <!-- -----------Bootstrap Javascript  -------------------->
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- -----------vanilla Javascript ------------------------ -->
