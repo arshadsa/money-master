@@ -30,8 +30,8 @@ function calculateExpenseBalance(income, food, rent, cloths){
 }
 
 // Savings calculation.
-function calculateSavings(percentSave, balance){
-  let savingsAmount = parseFloat(percentSave) *  parseFloat(balance) / 100;
+function calculateSavings(percentSave, income, balance){
+  let savingsAmount = parseFloat(percentSave) *  parseFloat(income) / 100;
   let remainingBalance = balance - savingsAmount;
   return [savingsAmount, remainingBalance];
 }
@@ -94,7 +94,6 @@ document.getElementById('calculate').addEventListener('click', function () {
   else
   {
     // Some of the items have negative input. Check failed at the if statement.
-
     document.getElementById('negative-input').classList.remove('d-none');
     clearExpensesBalanceSavings();
   }  
@@ -106,7 +105,8 @@ document.getElementById('save').addEventListener('click', function () {
   document.getElementById('error-save').classList.add('d-none');
 const percentSave = getValue('percent-save');
 const balance = getValue('balance', 'text');
-[savingsAmount, remainingBalance] = calculateSavings(percentSave, balance);
+const income = getValue('income');
+[savingsAmount, remainingBalance] = calculateSavings(percentSave,income, balance);
 
 // Now check if the savings amount and remaining balance is zero or positive.
 
@@ -117,7 +117,6 @@ if(savingsAmount >=0 && remainingBalance >= 0)
 }
 else {
   // There is some error in the fileds. It can be negative savings input.
-
   document.getElementById('error-save').classList.remove('d-none');
   document.getElementById('saving-amount').innerHTML = '';
   document.getElementById('remaining-balance').innerHTML = '';
