@@ -1,6 +1,8 @@
-function clearExpensesBalance(){
+function clearExpensesBalanceSavings(){
   document.getElementById('total-expense').innerHTML = '';
   document.getElementById('balance').innerHTML = '';
+  document.getElementById('saving-amount').innerHTML = '';
+  document.getElementById('remaining-balance').innerHTML = '';
 }
 
 function clearFields(){
@@ -23,12 +25,8 @@ function calculateExpenseBalance(income, food, rent, cloths){
 }
 
 function calculateSavings(percentSave, balance){
-  console.log(parseFloat(percentSave));
-  console.log(parseFloat(balance));
   let savingsAmount = parseFloat(percentSave) *  parseFloat(balance) / 100;
   let remainingBalance = balance - savingsAmount;
-  console.log('Savings'. savingsAmount);
-  console.log('<br>remainngBalance'. remainingBalance);
   return [savingsAmount, remainingBalance];
 }
 
@@ -36,10 +34,8 @@ function calculateSavings(percentSave, balance){
 function getValue(id, type){
   if (type == 'text')
   {
-    console.log (document.getElementById(id).innerText);
     return parseInt(document.getElementById(id).innerText); 
   } else {
-    console.log (document.getElementById(id).value);
     return document.getElementById(id).value; 
   }
 
@@ -61,7 +57,7 @@ document.getElementById('calculate').addEventListener('click', function () {
   if(income<0 || food < 0 || rent < 0 || cloths <0)
   {
     document.getElementById('negative-input').classList.remove('d-none');
-    clearExpensesBalance();
+    clearExpensesBalanceSavings();
   } 
   else 
   {
@@ -74,7 +70,7 @@ document.getElementById('calculate').addEventListener('click', function () {
     else
     {
       document.getElementById('over-expense').classList.remove('d-none');
-      clearExpensesBalance();
+      clearExpensesBalanceSavings();      
       // clearFields();
     }
   }
@@ -93,6 +89,8 @@ if(savingsAmount >=0 && remainingBalance >= 0)
 }
 else {
   document.getElementById('error-save').classList.remove('d-none');
+  document.getElementById('saving-amount').innerHTML = '';
+  document.getElementById('remaining-balance').innerHTML = '';
 }
 
 });
