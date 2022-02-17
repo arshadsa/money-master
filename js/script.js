@@ -117,10 +117,9 @@ if(savingsAmount >=0 && remainingBalance >= 0)
 }
 else {
   // There is some error in the fileds. It can be negative savings input.
-  
+
   document.getElementById('error-save').classList.remove('d-none');
   document.getElementById('saving-amount').innerHTML = '';
   document.getElementById('remaining-balance').innerHTML = '';
 }
-
 });
